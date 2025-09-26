@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="main.js" defer></script>
+    <title>Быки и Коровы</title>
+</style>
+</head>
+<body class="min-h-[100vh] bg-gray-600 flex justify-center items-center p-3">
+    <div class="bg-gray-700 rounded-xl shadow-2xl shadow-black/50  max-w-[500px] text-center p-7">
+        <h1 class="mb-2 text-white text-xl md:text-3xl md:mb-5 font-extrabold">Быки и Коровы</h1>
+        
+        <div class="bg-gray-100 rounded-md border-solid border-2 ">
+            <h2 class=" font-medium mb-1 md:mb-2 text-lg md:text-2xl">Правила игры:</h2>
+            <p class="mb-1 md:mb-2 text-black text-sm  text-left ml-1.5 md:ml-2">•  Компьютер загадал 4-значное число с неповторяющимися цифрами</p>
+            <p class="mb-1 md:mb-2 text-black text-sm  text-left ml-1.5 md:ml-2">•  Введите вашу догадку в поля выше</p>
+            <p class="mb-1 md:mb-2 text-black text-sm  text-left ml-1.5 md:ml-2">•  <span class="text-black font-medium underline">Быки</span> - цифры, которые угаданы правильно и стоят на своих местах</p>
+            <p class="mb-1 md:mb-2 text-black text-sm text-left ml-1.5 md:ml-2">•   <span class="text-black font-medium underline">Коровы</span> - цифры, которые есть в числе, но стоят не на своих местах</p>
+            <p class="mb-1 md:mb-2 text-black text-sm  text-left ml-1.5 md:ml-2">• Цель - угадать число с минимального количества попыток</p>
+        </div>
+        
+        <div class="flex justify-center gap-1 md:gap-2.5 w-full max-w-[600px] mt-2 md:mt-4">
+            <input type="text" class="digit-input w-12 md:w-16 h-12 md:h-16 text-center font-bold text-xl md:text-2xl bg-gray-700
+             text-white rounded-lg border-gray-400 border-4 shadow-lg shadow-black/20 transition-all duration-300 focus:border-black focus:ring-4 " required  maxlength="1" data-index="0">
+            <input type="text" class="digit-input w-12 md:w-16 h-12 md:h-16 text-center font-bold text-xl md:text-2xl bg-gray-700
+             text-white rounded-lg border-gray-400 border-4 shadow-lg shadow-black/20 transition-all duration-300  focus:border-black focus:ring-4" required maxlength="1" data-index="1">
+            <input type="text" class="digit-input w-12 md:w-16 h-12 md:h-16 text-center font-bold text-xl md:text-2xl bg-gray-700
+             text-white rounded-lg border-gray-400 border-4 shadow-lg shadow-black/20 transition-all duration-300  focus:border-black focus:ring-4" required maxlength="1" data-index="2">
+            <input type="text" class="digit-input w-12 md:w-16 h-12 md:h-16 text-center font-bold text-xl md:text-2xl bg-gray-700
+             text-white rounded-lg border-gray-400 border-4 shadow-lg shadow-black/20 transition-all duration-300  focus:border-black focus:ring-4" required maxlength="1" data-index="3">
+        </div>
+        
+        <div class="text-red-500 text-sm mt-1 md:mt-2 min-h-5" id="error-message"></div>
+        
+        <div class="flex justify-center gap-2.5 md:gap-5 mb-1 md:mb-3  mt-0.5 md:mt-1">
+            <button class="px-2 md:px-5 bg-gray-100  border-4 shadow-md shadow-black/20 rounded-sm md:rounded-lg 
+             text-black text-md md:text-lg font-medium cursor-pointer transition-all duration-300" id="check-btn" disabled>Проверить</button>
+            <button class="px-2 md:px-5 bg-gray-100  border-4 shadow-md shadow-black/20 rounded-sm md:rounded-lg 
+            text-black text-md md:text-lg font-medium cursor-pointer transition-all duration-300 hover:-translate-y-0.5 hover:bg-gray-300 " id="new-game-btn">Новая игра</button>
+        </div>
+        
+        <div class="mt-0.5 md:mt-1 text-md md:text-lg font-semibold rounded-lg flex justify-center flex-col min-h-10" id="result">Result</div>
+        
+        <div class="mt-1 md:mt-2 max-h-48 overflow-y-auto border border-gray-400 rounded-lg p-3 divide-y divide-gray-200" id="attempts-list"></div>
+    </div>
+
+</body>
+</html>
