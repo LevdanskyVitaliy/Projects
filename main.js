@@ -71,8 +71,6 @@ function ClearAll() {
 }
 
 
-// Активация/деактивация кнопки
-updateCheckButton();
 
  // Фокус на первом поле
  digitInputs[0].focus();
